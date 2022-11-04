@@ -4,11 +4,20 @@ public class EmpDTO {
 	private int employee_id, department_id;
 	private String first_name, job_id;
 	private DeptDTO dept;
+	private LocDTO ldto;
 
 	public EmpDTO() {
 		// TODO Auto-generated constructor stub
 	}
-	
+
+	public LocDTO getLdto() {
+		return ldto;
+	}
+
+	public void setLdto(LocDTO ldto) {
+		this.ldto = ldto;
+	}
+
 	public DeptDTO getDept() {
 		return dept;
 	}

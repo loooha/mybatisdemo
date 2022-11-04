@@ -51,4 +51,8 @@ public class JoinDAO {
 		return session.selectList("join.dnator");
 	}
 	
+	public List<EmpDTO> emp_dept_locMethod() {
+		return session.selectList("join.emp_dept_loc");
+	}
+	
 } // end class

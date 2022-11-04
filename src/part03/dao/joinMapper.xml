@@ -65,5 +65,25 @@
 			SELECT *FROM employees
 			WHERE employee_id IN (100, 200)
 		</select>
+		
+		<resultMap type="part03.dto.EmpDTO" id="emp_dept_locResult">
+			<result column="employee_id" property="employee_id"/>
+			<result column="first_name" property="first_name"/>
+			
+			<association property="dept" javaType="part03.dto.DeptDTO">
+				<result column="department_name" property="department_name"/>
+			</association>
+			
+			<association property="ldto" javaType="part03.dto.LocDTO">
+					<result column="city" property="city"/>
+				</association>
+		</resultMap>
 	
+		<select id="emp_dept_loc" resultMap="emp_dept_locResult">
+			SELECT e.employee_id, e.first_name, d.department_name, l.city
+			FROM employees e, departments d, locations l
+			WHERE e.department_id = d.department_id
+			AND d.location_id = l.location_id
+		</select>
+		
 </mapper>

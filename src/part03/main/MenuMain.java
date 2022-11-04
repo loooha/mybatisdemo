@@ -24,10 +24,15 @@ public class MenuMain {
 //			}
 //		}
 
-		List<EmpDTO> aList = eDeptController.partProcess();
-		for (EmpDTO dto : aList) {
-			System.out.printf("%d %s %s %d\n", dto.getEmployee_id(), dto.getFirst_name(), dto.getJob_id(),
-					dto.getDepartment_id());
+//		List<EmpDTO> aList = eDeptController.partProcess();
+//		for (EmpDTO dto : aList) {
+//			System.out.printf("%d %s %s %d\n", dto.getEmployee_id(), dto.getFirst_name(), dto.getJob_id(),
+//					dto.getDepartment_id());
+//		}
+		
+		List<EmpDTO> aList = eDeptController.emp_dept_locProcess();
+		for (EmpDTO eDto : aList) {
+			System.out.printf("%d %s %s %s\n", eDto.getEmployee_id(), eDto.getFirst_name(), eDto.getDept().getDepartment_name(), eDto.getLdto().getCity());
 		}
 
 	}
